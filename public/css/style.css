@@ -232,11 +232,14 @@ button:hover {
 #slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
   border: 0;
   cursor: pointer;
-  background: #10d5c2;
+  background-color: #10d5c2;
+  background-image: url("/images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 1rem;
   border-radius: 50%;
   -webkit-box-shadow: #10d5c2 0px 22px 70px 4px;
@@ -244,10 +247,10 @@ button:hover {
 }
 
 #slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
   border: 0;
-  background: url("/public/images/icon-slider.svg");
+  background: url("/images/icon-slider.svg");
   cursor: pointer;
 }
 
