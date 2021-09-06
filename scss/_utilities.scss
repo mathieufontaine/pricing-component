@@ -1,0 +1,52 @@
+@import url("https://fonts.google.com/specimen/Manrope");
+
+$white: hsl(0, 0%, 100%);
+$blue: hsl(230, 100%, 99%);
+$dark-blue: hsl(227, 35%, 25%);
+$gray: hsl(225, 20%, 60%);
+$cyan: hsl(174, 86%, 45%);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif;
+  color: $gray;
+  height: 100%;
+  background: hsl(230, 100%, 99%);
+  margin: 0 auto;
+}
+
+main {
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+h1 {
+  color: $dark-blue;
+  margin: 2rem 0;
+}
+
+section {
+  position: relative;
+  padding: 6rem;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  cursor: pointer;
+}
