@@ -25,21 +25,23 @@ function updateNumbers() {
   const discount = 0.75;
   let newPrice;
   let newViews;
-  if (val > 75) {
+  if (val == 5) {
     newViews = ">1000";
     newPrice = 50;
-    val = 100;
-  } else if (val > 50) {
-    newViews = "500";
+  } else if (val == 4) {
+    newViews = "<500";
     newPrice = 30;
-  } else if (val > 25) {
-    newViews = "100";
-    newPrice = 16;
-  } else {
+  } else if (val == 3) {
     newViews = "<100";
+    newPrice = 16;
+  } else if (val == 2) {
+    newViews = "<20";
+    newPrice = 12;
+  } else {
+    newViews = "<5";
     newPrice = 10;
   }
   billing.checked ? (newPrice *= discount) : newPrice;
   views.innerText = newViews;
-  price.innerText = newPrice;
+  price.innerText = (Math.round(newPrice * 100) / 100).toFixed(2);
 }
