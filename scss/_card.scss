@@ -1,12 +1,11 @@
 .headings {
-  height: 20vh;
   text-align: center;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
   img {
     position: absolute;
     top: 50%;
@@ -26,68 +25,40 @@
 // * card top
 
 .card-top {
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid rgb(211, 211, 211);
   font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   & > div {
     margin: 3rem 0;
   }
+  .views {
+    letter-spacing: 2px;
+  }
+  .price {
+    text-align: right;
+  }
+  .slider-container {
+    grid-row: 2;
+    grid-column: 1/3;
+  }
+  .billing {
+    grid-column: 1/3;
+  }
 }
 
-.options {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#amount {
+#amount,
+.dollar {
   font-size: 4rem;
   color: $dark-blue;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  height: 8px;
-  background: hsl(224, 65%, 95%);
-  border-radius: 5px;
-  #cursor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: $cyan;
-    padding: 1rem;
-    width: 40px;
-    border-radius: 100%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    box-shadow: $cyan 0px 22px 70px 4px;
-  }
-
-  #fill {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translateY(-50%);
-    height: 8px;
-    border-radius: 5px;
-    width: 50%;
-    background: $cyan;
-  }
 }
 
 .billing {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
+  font-weight: 400;
   #discount {
     background: hsl(14, 92%, 95%);
     color: hsl(15, 100%, 70%);
@@ -120,14 +91,13 @@ button {
   border: 0;
   background: $dark-blue;
   color: hsl(226, 100%, 87%);
-  padding: 1rem 4rem;
+  padding: 1.5rem 4rem;
   font-weight: bold;
   border-radius: 20px;
   outline: none;
   cursor: pointer;
   text-align: center;
   &:hover {
-    // background: $black;
-    // color: $white;
+    color: $white;
   }
 }
