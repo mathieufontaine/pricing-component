@@ -4,6 +4,7 @@ $white: hsl(0, 0%, 100%);
 $blue: hsl(230, 100%, 99%);
 $dark-blue: hsl(227, 35%, 25%);
 $gray: hsl(225, 20%, 60%);
+$cyan: hsl(174, 86%, 45%);
 
 *,
 *:before,
@@ -53,6 +54,19 @@ a {
 .headings {
   height: 20vh;
   text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
 }
 .card {
   background: $white;
@@ -70,7 +84,7 @@ a {
   flex-direction: column;
   align-items: space-around;
   & > div {
-    margin: 2rem 0;
+    margin: 3rem 0;
   }
 }
 
@@ -86,11 +100,39 @@ a {
   color: $dark-blue;
 }
 
-#slider {
+.slider {
+  position: relative;
   width: 100%;
   height: 8px;
   background: hsl(224, 65%, 95%);
   border-radius: 5px;
+  #cursor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $cyan;
+    padding: 1rem;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: $cyan 0px 22px 70px 4px;
+  }
+
+  #fill {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    height: 8px;
+    border-radius: 5px;
+    width: 50%;
+    background: $cyan;
+  }
 }
 
 .billing {
@@ -118,5 +160,26 @@ a {
   list-style: none;
   li {
     margin: 1rem;
+    &:before {
+      content: url("/public/images/icon-check.svg");
+      padding: 1rem;
+      width: 50px;
+    }
+  }
+}
+
+button {
+  border: 0;
+  background: $dark-blue;
+  color: hsl(226, 100%, 87%);
+  padding: 1rem 4rem;
+  font-weight: bold;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    // background: $black;
+    // color: $white;
   }
 }
